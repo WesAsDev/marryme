@@ -1,0 +1,45 @@
+<body>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      background-color: black;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    div {
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #yes-button {
+      background-color: #ffffff;
+      border: 0;
+      padding: 0.5rem 2rem;
+      max-height: 2rem;
+    }
+  </style>
+  <div>
+    <img id="imagem" src="" />
+    <h2 id="texto" style="color: white">Aceita de uma vez</h2>
+
+    <button onclick="aceitou()" id="yes-button" class="button">SIM</button>
+  </div>
+</body>
+
+<script>
+  function aceitou() {
+    let img = document.querySelector('#imagem')
+    let text = document.querySelector('#texto')
+    let yesButton = document.querySelector('#yes-button')
+    img.src = 'https://www.gifcen.com/wp-content/uploads/2021/02/love-gif-2.gif'
+
+    text.innerHTML = 'Eu sabia que vc ia aceitar'
+    yesButton.remove()
+  }
+</script>

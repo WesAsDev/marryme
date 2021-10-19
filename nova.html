@@ -1,0 +1,55 @@
+<body>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      background-color: black;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    div {
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #no-button {
+      background-color: #ffffff;
+      border: 0;
+      padding: 0.5rem 2rem;
+      max-height: 2rem;
+    }
+  </style>
+  <div>
+    <button onmouseover="alertar()" id="no-button" class="button">NÃO</button>
+  </div>
+</body>
+
+<script>
+  let seconCounter = 0
+
+  function getRandomLocation(min, max) {
+    return Math.random() * (max - min) + min
+  }
+
+  function alertar() {
+    if (seconCounter == 0) {
+      window.moveTo(600, 100)
+      window.resizeTo(200, 300)
+    } else if (seconCounter >= 1) {
+      window.moveTo(
+        getRandomLocation(0, window.screen.width),
+        getRandomLocation(0, window.screen.height)
+      )
+
+      console.log(seconCounter)
+      if (seconCounter == 4) {
+        window.open('chega.html', '')
+      }
+    }
+    seconCounter++
+  }
+</script>
